@@ -110,7 +110,7 @@
 
 - 로그에서 ClassCastException이 발견된 경우 마인크래프트 1.18미만의 버전에서는 **무조건** java8-multiarch 이미지를 사용하시기 바랍니다.
 
-- 로그에서 ClassMetadataNotFoundException이 발견된 경우 최신 버전의 마크에서는 특정모드가 자바버전 17이상을 지원 하지 경우가 발생할수 있습니다. 다른 자바버전을 시도해보세요. [사용 가능한 자바 리스트](https://docker-minecraft-server.readthedocs.io/en/latest/versions/java/)
+- 로그에서 ClassMetadataNotFoundException이 발견된 경우 최신 버전의 마크에서는 특정모드가 자바버전 17이상을 지원 하지 경우가 발생할수 있습니다. 다른 자바버전을 시도해보세요. [사용 가능한 자바 이미지 리스트](https://hub.docker.com/r/itzg/minecraft-server/tags)
 
 
 ## 기여
@@ -133,5 +133,6 @@
 - [Minecraft Server Guide](https://minecraft.gamepedia.com/Tutorials/Setting_up_a_server)
 - [CurseForge](https://www.curseforge.com)
 - [Docker Java Forge Version](https://docker-minecraft-server.readthedocs.io/en/latest/versions/java/#forge-versions)
+- [Minecraft image document](https://docker-minecraft-server.readthedocs.io/en/latest/)
 ---
 
