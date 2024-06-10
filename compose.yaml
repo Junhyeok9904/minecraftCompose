@@ -3,7 +3,7 @@ services:
     container_name: mc # 컨테이너 이름을 'mc'로 설정
     image: itzg/minecraft-server:java8-multiarch # Java 8을 사용하도록 설정된 Minecraft 서버 이미지
     ports:
-      - 25564:25565 # 호스트의 포트 25564를 컨테이너의 포트 25565로 매핑
+      - 25565:25565 # 호스트의 포트 25565를 컨테이너의 포트 25565로 매핑
     tty: true # 터미널 할당 (`-t` 옵션)
     stdin_open: true # 표준 입력 스트림 열기 (`-i` 옵션)
     environment:
