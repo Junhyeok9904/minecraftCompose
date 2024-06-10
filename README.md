@@ -34,33 +34,36 @@
 
     ```yaml
     services:
-      minecraft:
-        container_name: mc
-        image: itzg/minecraft-server:java8-multiarch
-        ports:
-          - 25564:25565
-        tty: true        
-        stdin_open: true  
+        minecraft:
+            container_name: mc # 컨테이너 이름을 'mc'로 설정
+            image: itzg/minecraft-server:java8-multiarch # Java 8을 사용하도록 설정된 Minecraft 서버 이미지
+            ports: - 25565:25565 # 호스트의 포트 25565를 컨테이너의 포트 25565로 매핑
+            tty: true # 터미널 할당 (`-t` 옵션)
+            stdin_open: true # 표준 입력 스트림 열기 (`-i` 옵션)
         environment:
-          MEMORY: 16G
-          ENABLE_ROLLING_LOGS: "TRUE"
-          TYPE: CURSEFORGE
-          CF_SERVER_MOD: "<MOD.zip형식의 모드 파일이 필요 path는./data폴더 안에 넣을것>"
-          EULA: "TRUE"
-          VERSION: "1.12.2"
-          MOTD: "The World of Moded Server"
-          MAX_PLAYERS: 10
-          MAX_WORLD_SIZE: 10000
-          ENABLE_COMMAND_BLOCK: "TRUE"
-          VIEW_DISTANCE: 12
-          MODE: "SURVIVAL"
-          PVP: "FALSE"
-          STOP_SERVER_ANNOUNCE_DELAY: 20
-          GUI: "FALSE"
+            MEMORY: 16G # 서버에 할당할 메모리 양
+            ENABLE_ROLLING_LOGS: "TRUE" # 롤링 로그를 활성화
+            TYPE: CURSEFORGE # 서버 유형을 CurseForge로 설정
+            CF_SERVER_MOD: "<MOD.zip>" # 사용할 모드 파일을 지정 (./data 폴더 내에 모드 파일을 위치)
+            EULA: "TRUE" # Minecraft EULA에 동의
+            VERSION: "1.12.2" # Minecraft 서버 버전을 1.12.2로 설정
+            MOTD: "The World of Moded Server" # 서버의 모티브 (Message of the Day)
+            MAX_PLAYERS: 10 # 최대 플레이어 수를 10명으로 설정
+            MAX_WORLD_SIZE: 10000 # 월드 최대 크기를 10000으로 설정
+            ENABLE_COMMAND_BLOCK: "TRUE" # 커맨드 블록을 활성화
+            VIEW_DISTANCE: 12 # 뷰 거리 설정
+            MODE: "SURVIVAL" # 게임 모드를 서바이벌로 설정
+            PVP: "FALSE" # 플레이어 간 전투를 비활성화
+            STOP_SERVER_ANNOUNCE_DELAY: 20 # 서버 중지 알림 지연 시간을 20초로 설정
+            GUI: "FALSE" # 서버 GUI를 비활성화
+            GENERATE_STRUCTURES: "TRUE" # 구조물 생성을 활성화
+            SPAWN_PROTECTION: 10 # 스폰 보호 크기를 10으로 설정
+            USE_AIKAR_FLAGS: "TRUE" # Aikar 플래그 사용
         volumes:
-          - ./data:/data
-          - ./downloads:/downloads
-        restart: unless-stopped
+            - ./data:/data # 호스트의 ./data 디렉토리를 컨테이너의 /data 디렉토리로 마운트
+            - ./downloads:/downloads # 호스트의 ./downloads 디렉토리를 컨테이너의 /downloads 디렉토리로 마운트
+    restart: unless-stopped # 컨테이너가 중지될 때 자동으로 재시작 (명시적으로 중지할 때까지)
+
     ```
 
 2. Docker Compose를 사용하여 서버를 실행합니다:

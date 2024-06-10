@@ -22,6 +22,9 @@ services:
       PVP: "FALSE" # 플레이어 간 전투를 비활성화
       STOP_SERVER_ANNOUNCE_DELAY: 20 # 서버 중지 알림 지연 시간을 20초로 설정
       GUI: "FALSE" # 서버 GUI를 비활성화
+      GENERATE_STRUCTURES: "TRUE" # 구조물 생성을 활성화
+      SPAWN_PROTECTION: 10 # 스폰 보호 크기를 10으로 설정
+      USE_AIKAR_FLAGS: "TRUE" # Aikar 플래그 사용
     volumes:
       - ./data:/data # 호스트의 ./data 디렉토리를 컨테이너의 /data 디렉토리로 마운트
       - ./downloads:/downloads # 호스트의 ./downloads 디렉토리를 컨테이너의 /downloads 디렉토리로 마운트
