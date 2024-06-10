@@ -38,6 +38,8 @@
 이 프로젝트를 실행하기 위해서는 다음이 필요합니다:
 1. Docker 설치
 2. Docker Compose 설치 (Windows나 Mac 이외의 OS에서 필요)
+3. 서버용 모드 파일 준비
+4. `docker-compose.yml` 파일에서 `CF_SERVER_MOD` 환경 변수에 모드 파일의 경로 지정
 
 ## 가동 방법
 
@@ -127,4 +129,3 @@
 - [Docker Java Forge Version](https://docker-minecraft-server.readthedocs.io/en/latest/versions/java/#forge-versions)
 ---
 
-이 업데이트된 README는 프로젝트를 설정하고 관리하는 데 필요한 정보를 더 쉽게 찾을 수 있도록 도와줄 것입니다.
